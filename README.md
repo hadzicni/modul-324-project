@@ -1,3 +1,29 @@
+# Tournament Maker
+
+## Projektbeschreibung
+
+Tournament Maker ist eine Web-Applikation zur Erstellung und Verwaltung eigener Turniere.
+
+Benutzer können Turniere erstellen, Teilnehmer hinzufügen und automatisch Spielpaarungen generieren. Die Ergebnisse können nach jedem Match eingetragen werden, sodass die Gewinner in die nächste Runde aufsteigen.
+
+Das Ziel ist eine einfache und übersichtliche Plattform, auf der Turniere für verschiedene Games und Sportarten organisiert werden können.
+
+## Geplante Funktionen
+
+- Turniere erstellen und verwalten
+- Teilnehmer hinzufügen und entfernen
+- Turnierbaum automatisch generieren
+- Match-Ergebnisse eintragen
+- Gewinner und Turniersieger anzeigen
+
+## Erweiterungsmöglichkeiten
+
+- Benutzeraccounts
+- Unterschiedliche Turniermodi
+- Ranglisten und Statistiken
+- Turniere über Links teilen
+- Live-Ergebnisse anzeigen
+
 # BBZBL Modul 324: Web-Applikation Template
 
 Dieses Template dient als Vorlage zum Starten eures Projekts.
