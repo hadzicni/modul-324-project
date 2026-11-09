@@ -39,12 +39,14 @@ pnpm install
 
 ### Befehle
 
-| Befehl       | Beschreibung                                                  |
-| ------------ | ------------------------------------------------------------- |
-| `pnpm dev`   | Startet den Entwicklungsserver auf <http://localhost:3000>    |
-| `pnpm build` | Erstellt den Production-Build                                 |
-| `pnpm start` | Startet den Production-Build (vorher `pnpm build` ausführen)  |
-| `pnpm lint`  | Prüft den Code mit ESLint                                     |
+| Befehl              | Beschreibung                                                 |
+| ------------------- | ------------------------------------------------------------ |
+| `pnpm dev`          | Startet den Entwicklungsserver auf <http://localhost:3000>   |
+| `pnpm build`        | Erstellt den Production-Build                                |
+| `pnpm start`        | Startet den Production-Build (vorher `pnpm build` ausführen) |
+| `pnpm lint`         | Prüft den Code mit ESLint                                    |
+| `pnpm format`       | Formatiert den Code mit Prettier                             |
+| `pnpm format:check` | Prüft, ob der Code korrekt formatiert ist                    |
 
 # BBZBL Modul 324: Web-Applikation Template
 

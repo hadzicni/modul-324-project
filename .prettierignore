@@ -1,0 +1,6 @@
+# Prettier beachtet .gitignore automatisch. Hier stehen nur Dateien,
+# die zwar versioniert sind, aber von Tools generiert werden.
+pnpm-lock.yaml
+CHANGELOG.md
+.release-please-manifest.json
+AGENTS.md
