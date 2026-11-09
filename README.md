@@ -24,6 +24,28 @@ Das Ziel ist eine einfache und übersichtliche Plattform, auf der Turniere für 
 - Turniere über Links teilen
 - Live-Ergebnisse anzeigen
 
+## Lokale Entwicklung
+
+### Voraussetzungen
+
+- [Node.js](https://nodejs.org/) 20.9 oder neuer
+- [pnpm](https://pnpm.io/) 12 (die genaue Version ist in `package.json` festgelegt)
+
+### Installation
+
+```bash
+pnpm install
+```
+
+### Befehle
+
+| Befehl       | Beschreibung                                                  |
+| ------------ | ------------------------------------------------------------- |
+| `pnpm dev`   | Startet den Entwicklungsserver auf <http://localhost:3000>    |
+| `pnpm build` | Erstellt den Production-Build                                 |
+| `pnpm start` | Startet den Production-Build (vorher `pnpm build` ausführen)  |
+| `pnpm lint`  | Prüft den Code mit ESLint                                     |
+
 # BBZBL Modul 324: Web-Applikation Template
 
 Dieses Template dient als Vorlage zum Starten eures Projekts.
