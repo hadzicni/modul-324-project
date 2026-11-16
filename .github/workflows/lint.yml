@@ -1,0 +1,78 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Check formatting
+        id: format
+        continue-on-error: true
+        run: pnpm format:check 2>&1 | tee format.log
+
+      - name: Run linting
+        id: lint
+        continue-on-error: true
+        run: pnpm lint 2>&1 | tee lint.log
+
+      - name: Create report
+        if: always()
+        env:
+          FORMAT_OUTCOME: ${{ steps.format.outcome }}
+          LINT_OUTCOME: ${{ steps.lint.outcome }}
+        run: |
+          status() {
+            case "$1" in
+              success) echo "Passed" ;;
+              failure) echo "Failed" ;;
+              *) echo "Skipped" ;;
+            esac
+          }
+
+          section() {
+            echo "<details><summary>$1</summary>"
+            echo
+            echo '```text'
+            if [ -s "$2" ]; then cat "$2"; else echo "No output"; fi
+            echo '```'
+            echo
+            echo "</details>"
+            echo
+          }
+
+          {
+            echo "## Lint report"
+            echo
+            echo "| Check | Command | Result |"
+            echo "| --- | --- | --- |"
+            echo "| Formatting | \`pnpm format:check\` | $(status "$FORMAT_OUTCOME") |"
+            echo "| Linting | \`pnpm lint\` | $(status "$LINT_OUTCOME") |"
+            echo
+            section "Output of pnpm format:check" format.log
+            section "Output of pnpm lint" lint.log
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Check result
+        if: steps.format.outcome != 'success' || steps.lint.outcome != 'success'
+        run: |
+          echo "::error::Formatting or linting failed. See the lint report in the job summary for details."
+          exit 1

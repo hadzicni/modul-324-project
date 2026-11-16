@@ -9,6 +9,7 @@ Diese Regeln gelten für alle, die am Tournament Maker mitarbeiten. Sie basieren
 - `.editorconfig` legt UTF-8, LF, zwei Leerzeichen und eine Leerzeile am Dateiende fest.
 - In VS Code sind die Plugins Prettier, EditorConfig und Conventional Commits installiert und "Format On Save" ist aktiv.
 - Formatiert wird lokal, nicht durch eine GitHub Action.
+- Der Workflow `Lint` führt bei jedem Pull Request und jedem Push auf `main` `pnpm format:check` und `pnpm lint` aus. Schlägt er fehl, wird der Pull Request nicht gemergt.
 
 Vor jedem Push müssen diese Befehle ohne Fehler durchlaufen:
 
