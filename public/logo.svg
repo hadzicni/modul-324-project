@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
+  <title id="title">Tournament Maker – tournament bracket and trophy</title>
+  <desc id="desc">Two bracket entries merge into one line leading to a trophy.</desc>
+  <g fill="none" stroke="#1D4ED8" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
+    <path id="upper-entry" d="M2.5 9 H13.5"/>
+    <path id="lower-entry" d="M2.5 23 H13.5"/>
+    <path id="bracket-and-final" d="M13.5 9 H16 V23 H13.5 M16 16 H21.5"/>
+  </g>
+  <g fill="#1D4ED8">
+    <path id="cup" d="M23 12.5 H29.5 V15.1 C29.5 18.35 28.4 20.3 26.25 20.9 C24.1 20.3 23 18.35 23 15.1 Z"/>
+    <path id="handles" fill-rule="evenodd" d="M23.4 14 H22.5 C21.5 14 21 14.6 21 15.6 C21 18.1 22.4 19.5 24.1 19.6 L24.5 18.05 C23.25 17.85 22.6 17 22.6 15.65 H23.4 Z M29.1 14 H30 C31 14 31.5 14.6 31.5 15.6 C31.5 18.1 30.1 19.5 28.4 19.6 L28 18.05 C29.25 17.85 29.9 17 29.9 15.65 H29.1 Z"/>
+    <path id="stem-and-base" d="M25.35 20 H27.15 V23 H29 V24.8 H23.5 V23 H25.35 Z"/>
+  </g>
+</svg>
