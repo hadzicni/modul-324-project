@@ -4,14 +4,14 @@ Tournament Maker verwendet auf allen Seiten helle Flächen und dunkelblaue Schri
 
 ## Farben
 
-| Farbe | Hex | Verwendung |
-| --- | --- | --- |
-| Royalblau | `#1D4ED8` | Hauptbuttons mit weisser Schrift, Links und Fokusrahmen |
-| Hellblau | `#EFF6FF` | Hintergrund für hervorgehobene Bereiche wie das Turnierformular oder die aktuelle Runde |
-| Goldgelb | `#FACC15` | Markierung des Turniersiegs, etwa ein Badge mit dunkelblauer Schrift |
-| Nachtblau | `#0F172A` | Überschriften und Fliesstext |
-| Kühles Weiss | `#F8FAFC` | Seitenhintergrund |
-| Weiss | `#FFFFFF` | Karten, Tabellen und Eingabefelder |
+| Farbe        | Hex       | Verwendung                                                                              |
+| ------------ | --------- | --------------------------------------------------------------------------------------- |
+| Royalblau    | `#1D4ED8` | Hauptbuttons mit weisser Schrift, Links und Fokusrahmen                                 |
+| Hellblau     | `#EFF6FF` | Hintergrund für hervorgehobene Bereiche wie das Turnierformular oder die aktuelle Runde |
+| Goldgelb     | `#FACC15` | Markierung des Turniersiegs, etwa ein Badge mit dunkelblauer Schrift                    |
+| Nachtblau    | `#0F172A` | Überschriften und Fliesstext                                                            |
+| Kühles Weiss | `#F8FAFC` | Seitenhintergrund                                                                       |
+| Weiss        | `#FFFFFF` | Karten, Tabellen und Eingabefelder                                                      |
 
 ## Schrift
 
