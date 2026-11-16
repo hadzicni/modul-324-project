@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1060" viewBox="0 0 1280 1060" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .label { font-size: 13px; fill: #6b7280; }
+    .chrome { font-size: 14px; fill: #9ca3af; }
+    .body { font-size: 15px; fill: #374151; }
+    .muted { font-size: 15px; fill: #9ca3af; }
+    .h1 { font-size: 38px; font-weight: bold; fill: #111827; letter-spacing: -0.02em; }
+    .h2 { font-size: 21px; font-weight: bold; fill: #111827; }
+    .h3 { font-size: 16px; font-weight: bold; fill: #111827; }
+    .btn-text { font-size: 14px; font-weight: bold; fill: #ffffff; }
+    .btn-text-alt { font-size: 14px; fill: #374151; }
+    .badge { font-size: 13px; font-weight: bold; fill: #ffffff; }
+    .note { font-size: 13px; fill: #6b7280; }
+    .round { font-size: 13px; font-weight: bold; fill: #9ca3af; letter-spacing: 0.08em; }
+    .round-active { font-size: 13px; font-weight: bold; fill: #111827; letter-spacing: 0.08em; }
+    .box { fill: #ffffff; stroke: #d1d5db; stroke-width: 1.5; }
+    .fill { fill: #f3f4f6; stroke: #d1d5db; stroke-width: 1.5; }
+    .placeholder { fill: #f9fafb; stroke: #d1d5db; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .active-box { fill: #ffffff; stroke: #374151; stroke-width: 2; }
+    .input { fill: #f9fafb; stroke: #9ca3af; stroke-width: 1.5; }
+    .primary { fill: #374151; }
+    .outline { fill: #ffffff; stroke: #9ca3af; stroke-width: 1.5; }
+    .divider { stroke: #e5e7eb; stroke-width: 1; }
+    .connector { fill: none; stroke: #9ca3af; stroke-width: 1.5; }
+  </style>
+
+  <rect width="1280" height="1060" fill="#ffffff"/>
+
+  <!-- ============ Browser frame ============ -->
+  <rect x="40" y="40" width="1200" height="690" rx="8" class="box"/>
+  <rect x="40" y="40" width="1200" height="40" rx="8" fill="#f3f4f6"/>
+  <rect x="40" y="70" width="1200" height="10" fill="#f3f4f6"/>
+  <circle cx="64" cy="60" r="5" fill="#d1d5db"/>
+  <circle cx="82" cy="60" r="5" fill="#d1d5db"/>
+  <circle cx="100" cy="60" r="5" fill="#d1d5db"/>
+  <rect x="124" y="50" width="380" height="20" rx="10" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="138" y="64" class="chrome">tournament-maker.local/turnier/sommer-cup-2026</text>
+
+  <!-- ============ 1. Kopfzeile ============ -->
+  <rect x="40" y="80" width="1200" height="72" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+  <rect x="80" y="102" width="28" height="28" rx="6" class="fill"/>
+  <text x="120" y="123" class="h3">Tournament Maker</text>
+  <text x="940" y="122" class="body">Meine Turniere</text>
+  <rect x="1070" y="102" width="130" height="30" rx="6" class="outline"/>
+  <text x="1135" y="122" class="btn-text-alt" text-anchor="middle">Anmelden</text>
+  <circle cx="60" cy="116" r="13" class="primary"/>
+  <text x="56" y="121" class="badge">1</text>
+
+  <!-- ============ 2. Turnierkopf ============ -->
+  <rect x="40" y="152" width="1200" height="128" fill="#fafafa"/>
+  <text x="80" y="180" class="label">&#8592; Meine Turniere</text>
+  <text x="80" y="226" class="h1">Sommer-Cup 2026</text>
+  <text x="80" y="256" class="body">8 Teilnehmer &#183; K.-o.-System &#183; Runde 2 von 3</text>
+  <circle cx="60" cy="216" r="13" class="primary"/>
+  <text x="56" y="221" class="badge">2</text>
+
+  <!-- ============ 3. Rundenbeschriftung ============ -->
+  <text x="80" y="312" class="round">VIERTELFINAL</text>
+  <text x="380" y="312" class="round-active">HALBFINAL</text>
+  <text x="474" y="312" class="label">(aktuelle Runde)</text>
+  <text x="680" y="312" class="round">FINAL</text>
+  <text x="980" y="312" class="round">TURNIERSIEGER</text>
+  <circle cx="60" cy="308" r="13" class="primary"/>
+  <text x="56" y="313" class="badge">3</text>
+
+  <!-- ============ Verbindungslinien ============ -->
+  <path d="M300 354 H340 V440 H300" class="connector"/>
+  <path d="M340 397 H380" class="connector"/>
+  <path d="M300 526 H340 V612 H300" class="connector"/>
+  <path d="M340 569 H380" class="connector"/>
+  <path d="M600 397 H640 V569 H600" class="connector"/>
+  <path d="M640 483 H680" class="connector"/>
+  <path d="M900 483 H980" class="connector"/>
+
+  <!-- ============ 4. Viertelfinal (gespielt) ============ -->
+  <rect x="80" y="322" width="220" height="64" rx="8" class="box"/>
+  <line x1="80" y1="354" x2="300" y2="354" class="divider"/>
+  <text x="96" y="343" class="body">M. Keller</text>
+  <text x="284" y="343" class="body" text-anchor="end">3</text>
+  <text x="96" y="375" class="muted">S. Brunner</text>
+  <text x="284" y="375" class="muted" text-anchor="end">1</text>
+
+  <rect x="80" y="408" width="220" height="64" rx="8" class="box"/>
+  <line x1="80" y1="440" x2="300" y2="440" class="divider"/>
+  <text x="96" y="429" class="muted">L. Frei</text>
+  <text x="284" y="429" class="muted" text-anchor="end">2</text>
+  <text x="96" y="461" class="body">A. Meier</text>
+  <text x="284" y="461" class="body" text-anchor="end">4</text>
+
+  <rect x="80" y="494" width="220" height="64" rx="8" class="box"/>
+  <line x1="80" y1="526" x2="300" y2="526" class="divider"/>
+  <text x="96" y="515" class="body">N. Hadzic</text>
+  <text x="284" y="515" class="body" text-anchor="end">5</text>
+  <text x="96" y="547" class="muted">T. Widmer</text>
+  <text x="284" y="547" class="muted" text-anchor="end">2</text>
+
+  <rect x="80" y="580" width="220" height="64" rx="8" class="box"/>
+  <line x1="80" y1="612" x2="300" y2="612" class="divider"/>
+  <text x="96" y="601" class="muted">R. Fischer</text>
+  <text x="284" y="601" class="muted" text-anchor="end">1</text>
+  <text x="96" y="633" class="body">D. Graf</text>
+  <text x="284" y="633" class="body" text-anchor="end">2</text>
+
+  <circle cx="60" cy="440" r="13" class="primary"/>
+  <text x="56" y="445" class="badge">4</text>
+
+  <!-- ============ 5. Halbfinal (aktuelle Runde, Ergebniseingabe) ============ -->
+  <rect x="380" y="357" width="220" height="120" rx="8" class="active-box"/>
+  <line x1="380" y1="397" x2="600" y2="397" class="divider"/>
+  <text x="396" y="383" class="body">M. Keller</text>
+  <rect x="530" y="363" width="54" height="28" rx="6" class="input"/>
+  <text x="396" y="423" class="body">A. Meier</text>
+  <rect x="530" y="403" width="54" height="28" rx="6" class="input"/>
+  <rect x="396" y="441" width="188" height="30" rx="6" class="primary"/>
+  <text x="490" y="461" class="btn-text" text-anchor="middle">Ergebnis speichern</text>
+
+  <rect x="380" y="529" width="220" height="120" rx="8" class="active-box"/>
+  <line x1="380" y1="569" x2="600" y2="569" class="divider"/>
+  <text x="396" y="555" class="body">N. Hadzic</text>
+  <rect x="530" y="535" width="54" height="28" rx="6" class="input"/>
+  <text x="396" y="595" class="body">D. Graf</text>
+  <rect x="530" y="575" width="54" height="28" rx="6" class="input"/>
+  <rect x="396" y="613" width="188" height="30" rx="6" class="primary"/>
+  <text x="490" y="633" class="btn-text" text-anchor="middle">Ergebnis speichern</text>
+
+  <circle cx="366" cy="338" r="13" class="primary"/>
+  <text x="362" y="343" class="badge">5</text>
+
+  <!-- ============ Final (noch nicht gespielt) ============ -->
+  <rect x="680" y="451" width="220" height="64" rx="8" class="placeholder"/>
+  <line x1="680" y1="483" x2="900" y2="483" class="divider"/>
+  <text x="696" y="472" class="muted">Sieger Halbfinal 1</text>
+  <text x="696" y="504" class="muted">Sieger Halbfinal 2</text>
+
+  <!-- ============ 6. Turniersieger ============ -->
+  <rect x="980" y="441" width="220" height="84" rx="8" class="placeholder"/>
+  <text x="1090" y="478" class="h3" text-anchor="middle" fill="#9ca3af">noch offen</text>
+  <text x="1090" y="500" class="label" text-anchor="middle">wird nach dem Final angezeigt</text>
+  <circle cx="962" cy="420" r="13" class="primary"/>
+  <text x="958" y="425" class="badge">6</text>
+
+  <!-- ============ Fusszeile ============ -->
+  <rect x="40" y="666" width="1200" height="64" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="112" y="704" class="label">Tournament Maker &#183; Modul 324</text>
+
+  <!-- ============ Legende ============ -->
+  <text x="40" y="790" class="h3">Legende</text>
+  <text x="40" y="820" class="body">1  Kopfzeile: Logo, Navigation und Anmelden</text>
+  <text x="40" y="846" class="body">2  Turnierkopf: Name, Teilnehmerzahl, Turniermodus und aktueller Rundenstand</text>
+  <text x="40" y="872" class="body">3  Rundenbeschriftung: jede Spalte ist eine Runde, die aktuelle Runde ist hervorgehoben</text>
+  <text x="40" y="898" class="body">4  Gespielte Paarung: beide Teilnehmer mit Resultat, der Gewinner ist hervorgehoben</text>
+  <text x="40" y="924" class="body">5  Aktuelle Runde: Eingabefelder f&#252;r beide Resultate und Button "Ergebnis speichern"</text>
+  <text x="40" y="950" class="body">6  Turniersieger: bleibt offen, bis das Final gespielt ist</text>
+
+  <text x="40" y="996" class="note">Wireframe ohne Farbgebung &#8211; Farben und Schriften werden in #16 festgelegt.</text>
+  <text x="40" y="1016" class="note">Dargestellter Zustand: Sommer-Cup 2026, 8 Teilnehmer, K.-o.-System, Runde 2 von 3 laufend.</text>
+</svg>
