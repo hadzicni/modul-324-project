@@ -7,7 +7,7 @@ Tournament Maker verwendet auf allen Seiten helle Flächen und dunkelblaue Schri
 | Farbe | Hex | Verwendung |
 | --- | --- | --- |
 | Royalblau | `#1D4ED8` | Hauptbuttons mit weisser Schrift, Links und Fokusrahmen |
-| Hellblau | `#EFF6FF` | Hintergrund für hervorgehobene Bereiche, etwa das Formular zum Erstellen eines Turniers |
+| Hellblau | `#EFF6FF` | Hintergrund für hervorgehobene Bereiche wie das Turnierformular oder die aktuelle Runde |
 | Goldgelb | `#FACC15` | Markierung des Turniersiegs, etwa ein Badge mit dunkelblauer Schrift |
 | Nachtblau | `#0F172A` | Überschriften und Fliesstext |
 | Kühles Weiss | `#F8FAFC` | Seitenhintergrund |
@@ -25,6 +25,8 @@ Die Hauptaktion eines Formulars ist ein blauer Button mit einer konkreten Beschr
 
 ## Turnierstatus und Ergebnisse
 
-Der Turnierstatus steht als Text beim Turniernamen, zum Beispiel «Runde 2 von 3» oder «Abgeschlossen». Im Turnierbaum sind die Runden beschriftet. Bei einer abgeschlossenen Begegnung steht das Ergebnis bei der Paarung. Der Turniersieger wird mit Namen genannt und mit einem goldgelben Badge «Sieger» gekennzeichnet.
+Der Turnierstatus steht als Text beim Turniernamen, zum Beispiel «Runde 2 von 3» oder «Abgeschlossen». Im Turnierbaum hat jede Runde eine beschriftete Spalte. Die aktuelle Runde ist hellblau hinterlegt und mit «Aktuelle Runde» beschriftet. Dort stehen die Eingabefelder für die Resultate und der royalblaue Button «Ergebnis speichern».
 
-Der [Startseiten-Mockup](mockups/startseite.svg) zeigt den Aufbau der Startseite als Beispiel.
+Bei gespielten Paarungen stehen beide Resultate neben den Namen. Der Name des Gewinners steht in SemiBold. Noch offene Plätze haben Text wie «Sieger Halbfinal 1» oder «Noch offen». Sobald das Final entschieden ist, erscheint der Name des Turniersiegers mit einem goldgelben Badge «Sieger».
+
+Die [Mockups](mockups/README.md) zeigen den Aufbau von Startseite und Turnierbaum.
