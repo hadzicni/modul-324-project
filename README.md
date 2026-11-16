@@ -45,8 +45,14 @@ pnpm install
 | `pnpm build`        | Erstellt den Production-Build                                |
 | `pnpm start`        | Startet den Production-Build (vorher `pnpm build` ausführen) |
 | `pnpm lint`         | Prüft den Code mit ESLint                                    |
+| `pnpm test`         | Führt alle Unit-Tests mit Vitest aus                         |
 | `pnpm format`       | Formatiert den Code mit Prettier                             |
 | `pnpm format:check` | Prüft, ob der Code korrekt formatiert ist                    |
+
+### Teststruktur
+
+- `lib/` enthält wiederverwendbare Anwendungslogik.
+- `tests/` enthält die Unit-Tests, zum Beispiel `tournament.test.ts`.
 
 # BBZBL Modul 324: Web-Applikation Template
 
