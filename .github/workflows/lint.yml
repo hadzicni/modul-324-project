@@ -12,30 +12,46 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Without an explicit shell, GitHub runs "bash -e" without pipefail,
+        # so "pnpm lint | tee" would report the exit code of tee and never fail.
+        shell: bash
     steps:
       - uses: actions/checkout@v7
 
       - uses: pnpm/action-setup@v6
 
+      # setup-node registers problem matchers that turn ESLint output into annotations.
       - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        id: install
+        run: pnpm install --frozen-lockfile
 
       - name: Check formatting
         id: format
-        continue-on-error: true
-        run: pnpm format:check 2>&1 | tee format.log
+        run: |
+          set +e
+          pnpm format:check 2>&1 | tee format.log
+          status=${PIPESTATUS[0]}
+          # Prettier only lists unformatted files, so create an annotation for each of them.
+          grep -E '^\[warn\] [^ ]+$' format.log | sed -E 's/^\[warn\] //' | while read -r file; do
+            echo "::error file=$file,title=Prettier::$file is not formatted. Run pnpm format to fix it."
+          done
+          exit $status
 
       - name: Run linting
         id: lint
-        continue-on-error: true
+        # Also run when formatting failed, so both results are visible at once.
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: pnpm lint 2>&1 | tee lint.log
 
       - name: Create report
-        if: always()
+        if: ${{ !cancelled() }}
         env:
           FORMAT_OUTCOME: ${{ steps.format.outcome }}
           LINT_OUTCOME: ${{ steps.lint.outcome }}
@@ -48,14 +64,23 @@ jobs:
             esac
           }
 
+          # Failed checks are expanded so the errors are visible without an extra click.
           section() {
-            echo "<details><summary>$1</summary>"
-            echo
-            echo '```text'
-            if [ -s "$2" ]; then cat "$2"; else echo "No output"; fi
-            echo '```'
-            echo
-            echo "</details>"
+            if [ "$3" = "failure" ]; then
+              echo "### $1 failed"
+              echo
+              echo '```text'
+              if [ -s "$2" ]; then cat "$2"; else echo "No output"; fi
+              echo '```'
+            else
+              echo "<details><summary>$1</summary>"
+              echo
+              echo '```text'
+              if [ -s "$2" ]; then cat "$2"; else echo "No output"; fi
+              echo '```'
+              echo
+              echo "</details>"
+            fi
             echo
           }
 
@@ -67,12 +92,6 @@ jobs:
             echo "| Formatting | \`pnpm format:check\` | $(status "$FORMAT_OUTCOME") |"
             echo "| Linting | \`pnpm lint\` | $(status "$LINT_OUTCOME") |"
             echo
-            section "Output of pnpm format:check" format.log
-            section "Output of pnpm lint" lint.log
+            section "Formatting" format.log "$FORMAT_OUTCOME"
+            section "Linting" lint.log "$LINT_OUTCOME"
           } >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Check result
-        if: steps.format.outcome != 'success' || steps.lint.outcome != 'success'
-        run: |
-          echo "::error::Formatting or linting failed. See the lint report in the job summary for details."
-          exit 1
