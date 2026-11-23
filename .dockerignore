@@ -1,0 +1,9 @@
+.git
+.next
+.zed
+node_modules
+coverage
+.env*
+*.tsbuildinfo
+**/.DS_Store
+**/*.pem

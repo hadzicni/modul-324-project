@@ -54,6 +54,17 @@ pnpm install
 - `lib/` enthält wiederverwendbare Anwendungslogik.
 - `tests/` enthält die Unit-Tests, zum Beispiel `tournament.test.ts`.
 
+## Mit Docker starten
+
+Mit laufendem Docker im Hauptverzeichnis des Repositorys ausführen:
+
+```bash
+docker build -t tournament-maker .
+docker run --rm -p 127.0.0.1:3000:3000 tournament-maker
+```
+
+Die Anwendung ist unter <http://localhost:3000> erreichbar. Mit `Ctrl+C` lässt sich der Container stoppen.
+
 # BBZBL Modul 324: Web-Applikation Template
 
 Dieses Template dient als Vorlage zum Starten eures Projekts.
