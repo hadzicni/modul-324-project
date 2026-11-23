@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.0](https://github.com/hadzicni/modul-324-project/compare/v0.3.0...v0.4.0) (2026-11-23)
+
+
+### Features
+
+* Logo und Favicon hinzufügen ([#51](https://github.com/hadzicni/modul-324-project/issues/51)) ([1ab57d0](https://github.com/hadzicni/modul-324-project/commit/1ab57d04a165ba21e0702cfa1b7b05093cbd2b0a))
+* Logo und Favicon hinzufügen ([#51](https://github.com/hadzicni/modul-324-project/issues/51)) ([56bac11](https://github.com/hadzicni/modul-324-project/commit/56bac11b06ed74ce80ad3df54289c372853daed2))
+
+
+### Bug Fixes
+
+* **test:** Erlaube esbuild-Build-Script ([#35](https://github.com/hadzicni/modul-324-project/issues/35)) ([d4a45b0](https://github.com/hadzicni/modul-324-project/commit/d4a45b05bdc709b533095002af185a95aba82aba))
+* **test:** Verwende stabile Rollup-Version ([#35](https://github.com/hadzicni/modul-324-project/issues/35)) ([c9bec6e](https://github.com/hadzicni/modul-324-project/commit/c9bec6e36f04abc9522329840884e013bedfc218))
+
 ## [0.3.0](https://github.com/hadzicni/modul-324-project/compare/v0.2.0...v0.3.0) (2026-11-16)
 
 
