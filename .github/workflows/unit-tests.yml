@@ -1,0 +1,57 @@
+name: Unit Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        # Explicit Bash enables pipefail, so tee cannot hide a test failure.
+        shell: bash
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run unit tests
+        id: unit_tests
+        run: pnpm test 2>&1 | tee "$RUNNER_TEMP/unit-tests.log"
+
+      - name: Create test report
+        if: ${{ !cancelled() && (steps.unit_tests.outcome == 'success' || steps.unit_tests.outcome == 'failure') }}
+        env:
+          TEST_OUTCOME: ${{ steps.unit_tests.outcome }}
+        run: |
+          {
+            echo '## Unit test report'
+            echo
+            echo '| Command | Result |'
+            echo '| --- | --- |'
+            printf '| `pnpm test` | %s |\n' "$TEST_OUTCOME"
+            echo
+            echo 'Test output (last 64 KiB; see the test step for the full log):'
+            echo
+            tail -c 65536 "$RUNNER_TEMP/unit-tests.log" | sed 's/^/    /'
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -54,6 +54,9 @@ pnpm install
 - `lib/` enthält wiederverwendbare Anwendungslogik.
 - `tests/` enthält die Unit-Tests, zum Beispiel `tournament.test.ts`.
 
+Der Workflow `Unit Tests` führt `pnpm test` bei Pull Requests und bei Pushes auf
+`main` aus. Die Ergebnisse stehen in der Job-Zusammenfassung in GitHub Actions.
+
 ## Mit Docker starten
 
 Mit laufendem Docker im Hauptverzeichnis des Repositorys ausführen:
